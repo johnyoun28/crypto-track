@@ -9,8 +9,8 @@ const Banner = () => {
         className='object-cover h-[400px] w-full'
       />
       <div className='absolute flex flex-col justify-around items-center py-6'>
-        <span className='text-6xl mb-5'>Crypto Tracker</span>
-        <span className='text-sm'>Get All The Info Regarding Your Favorite Crypto Currency</span>
+        <span className='text-6xl mb-5 text-center'>Crypto Tracker</span>
+        <span className='text-sm text-center text-[#5A5A5A]'>Get All The Info Regarding Your Favorite Crypto Currency</span>
       </div>
     </div>
   )
