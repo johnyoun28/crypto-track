@@ -23,7 +23,7 @@ const Coins = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false')
+        const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false')
         const data = await response.json()
         setCoins(data)
       } catch (err) {
@@ -35,10 +35,10 @@ const Coins = () => {
 
   
   return (
-    <div className="flex flex-col items-center m-5">
+    <div className="flex flex-col items-center m-5 w-full">
       <span className="text-2xl font-bold text-center">Cryptocurrency Prices by Market Cap</span>
       <input
-       className="w-[80%] mt-4 text-black" 
+       className="w-[90%] mt-4 text-black" 
        type="text" 
        onChange={changeHandler}
        placeholder="Search For a Crypto Currency.." />
