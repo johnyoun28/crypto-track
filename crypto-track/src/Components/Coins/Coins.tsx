@@ -36,9 +36,9 @@ const Coins = () => {
   
   return (
     <div className="flex flex-col items-center m-5 w-full">
-      <span className="text-2xl font-bold text-center">Cryptocurrency Prices by Market Cap</span>
+      <span className="text-4xl font-bold text-center">Cryptocurrency Prices by Market Cap</span>
       <input
-       className="w-[90%] mt-4 text-black" 
+       className="w-[90%] mt-4 text-white bg-[#14161a] rounded" 
        type="text" 
        onChange={changeHandler}
        placeholder="Search For a Crypto Currency.." />

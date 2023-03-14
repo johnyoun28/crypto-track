@@ -3,7 +3,7 @@ import React from 'react'
 const CoinsRow = () => {
   return (
     <div className='relative overflow-x-auto'>
-      <table className="w-full text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 table-fixed">
+      <table className="w-full text-base rounded text-black bg-[#EEBC1D] dark:bg-gray-700 dark:text-gray-400 table-fixed">
         <thead>
           <tr>
             <th scope="col" className="px-6 py-3">
