@@ -3,7 +3,7 @@ import CoinsRow from './CoinsRow'
 
 type CoinCardProps = {
     coin: {
-    id: string
+    id?: string
     image: string
     symbol: string
     name: string

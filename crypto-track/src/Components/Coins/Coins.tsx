@@ -1,14 +1,15 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, ChangeEvent} from 'react'
 import CoinsList from './CoinsList'
 
 export type CoinData = {
-  id: string
+  id?: string
   image: string
   symbol: string
   name: string
   current_price: number
   price_change_percentage_24h: number
   market_cap: number
+  market_cap_rank: number
 }
 
 
@@ -16,7 +17,7 @@ const Coins = () => {
   const [coins, setCoins] = useState<CoinData[]>([])
   const [search, setSearch] = useState('')
 
-  const changeHandler = (e: any) => {
+  const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value)
   }
 
@@ -33,16 +34,20 @@ const Coins = () => {
     fetchData()
   },[])
 
+  const filtered = coins.filter(coin => {
+    return coin.name.toLowerCase().includes(search.toLowerCase()) 
+    || coin.symbol.toLowerCase().includes(search.toLowerCase())
+  })
   
   return (
     <div className="flex flex-col items-center m-5 w-full">
       <span className="text-4xl font-bold text-center">Cryptocurrency Prices by Market Cap</span>
       <input
-       className="w-[90%] mt-4 text-white bg-[#14161a] rounded" 
+       className="w-[90%] mt-4 text-white bg-[#14161a] outline-white rounded" 
        type="text" 
        onChange={changeHandler}
        placeholder="Search For a Crypto Currency.." />
-       <CoinsList coins={coins} />
+       <CoinsList coins={filtered} />
     </div>
   )
 }
