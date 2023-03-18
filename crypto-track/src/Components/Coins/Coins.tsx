@@ -15,7 +15,7 @@ export type CoinData = {
 
 const Coins = () => {
   const [coins, setCoins] = useState<CoinData[]>([])
-  const [search, setSearch] = useState('')
+  const [search, setSearch] = useState<string>('')
 
   const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value)
