@@ -39,7 +39,7 @@ const Carousel = () => {
   })
 
   return (
-    <div className='h-[50%] flex items-center'>
+    <div className='h-[50%] max-w-[50%] flex items-center mt-8'>
         <AliceCarousel
         mouseTracking
         infinite
@@ -50,11 +50,10 @@ const Carousel = () => {
         items={items}
         autoPlay
         responsive={{
-          0: { items: 1 },
-          768: { items: 2 },
-          1024: { items: 3 },
+          0: { items: 2 },
+          512: { items: 4 },
+          
         }}
-
     />
     </div>
   )
