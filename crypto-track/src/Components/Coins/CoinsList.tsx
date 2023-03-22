@@ -1,8 +1,8 @@
-
 import React from 'react';
 import CoinCard from './CoinCard';
 import { CoinData } from './Coins';
 import CoinsRow from './CoinsRow';
+import {Link} from 'react-router-dom'
 
 type CoinListProps = {
   coins: CoinData[];
@@ -14,9 +14,15 @@ const CoinsList = ({ coins }: CoinListProps) => {
       <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 table-fixed">
         <CoinsRow />
         
-          {coins.map(coin => (
+        
+        <div className='cursor-pointer'>
+        {coins.map(coin => (
+            <Link to = {`/coin/${coin.id}`}>
             <CoinCard key={coin.id} coin={coin} />
+            </Link>
           ))}
+        </div>
+
        
       </table>
     </div>
@@ -24,4 +30,5 @@ const CoinsList = ({ coins }: CoinListProps) => {
 };
 
 export default CoinsList;
+
 
