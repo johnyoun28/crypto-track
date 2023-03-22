@@ -20,7 +20,7 @@ const CoinCard = ({ coin }: CoinCardProps) => {
 <div className="relative overflow-x-auto">
     <table className="w-full text-base text-left text-gray-500 dark:text-gray-400 table-fixed">
         <tbody>
-            <tr className="bg-[#14161a] border-b dark:bg-gray-800 dark:border-gray-700">
+            <tr className="bg-[#14161a] border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-[#131111]">
                 <th scope="row" className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
                     <div className='text-white mr-6'>{coin.market_cap_rank}.</div>
                     <img className="w-10 h-10 rounded-full" src={coin.image} alt="Jese image"/>
