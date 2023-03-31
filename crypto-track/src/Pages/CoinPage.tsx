@@ -3,8 +3,11 @@ import { useParams } from 'react-router-dom'
 import CoinGraph from '../Components/Coins/CoinGraph'
 
 type CoinData = {
-    image: string
+    image: {
+        large: string
+    }
     name: string
+    symbol: string
 }
 
 const CoinPage = () => {
@@ -18,7 +21,6 @@ const CoinPage = () => {
             const response = await fetch(`https://api.coingecko.com/api/v3/coins/${id}`)
             const data = await response.json()
             setCoins(data)
-            console.log(data,'ererere')
           } catch (err) {
             console.log(err)
           }
@@ -29,11 +31,15 @@ const CoinPage = () => {
       
   return (
     <div className='flex items-center text-white-500'>
-        <div className='flex flex-col border-r-2 w-[30%] mt-6'>
-        {
-            coins.name
-        }
-
+        <div className='flex flex-col border-r-2 w-[40%] mt-6'>
+            {
+                <div className='w-full flex flex-col justify-center items-center'>
+                    <img src={coins?.image.large} />
+                    {coins?.name}
+                    {coins?.symbol}
+                </div>
+        
+            }
         </div>
         <CoinGraph />
         
