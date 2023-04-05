@@ -2,7 +2,7 @@ import React,{useState , useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import CoinGraph from '../Components/Coins/CoinGraph'
 
-type CoinData = {
+export type CoinData = {
     image: {
         large: string
     }
@@ -27,7 +27,7 @@ type CoinData = {
 const CoinPage = () => {
 
     const { id } = useParams()
-    const [coins, setCoins] = useState<CoinData>()
+    const [coins, setCoins] = useState<CoinData | undefined>()
 
     useEffect(() => {
         const fetchData = async () => {
@@ -44,23 +44,23 @@ const CoinPage = () => {
 
       
   return (
-    <div className='flex items-center text-white-500'>
-        <div className='flex flex-col border-r-2 w-[30%] mt-6'>
+    <div className='flex text-white-500'>
+        <div className='flex flex-col items-center border-r-2 border-gray-400 w-[30%] h-full mt-6'>
             {
                 <div className='w-full flex flex-col justify-center items-center'>
                     <img className='h-48 mb-5' src={coins?.image.large} />
-                    <h2 className='text-5xl mb-5 font-bold'>{coins?.name}</h2>
-                    <p className='w-11/12 '>{coins?.description.en.split('.')[0]}.</p>
-                    <div className='w-11/12 mt-5'>
-                        <h4>RANK: {coins?.market_cap_rank}</h4>
-                        <h4>CURRENT PRICE: ${coins?.market_data.current_price.usd.toLocaleString()}</h4>
-                        <h4>MARKET CAP: ${coins?.market_data.market_cap.usd.toLocaleString()}</h4>
+                    <h2 className='text-6xl mb-5 font-bold'>{coins?.name}</h2>
+                    <p className='w-11/12 text-justify text-lg '>{coins?.description.en.split('.')[0]}.</p>
+                    <div className='w-11/12 mt-5 '>
+                        <h4 className='mb-3 text-2xl font-bold'>Rank: {coins?.market_cap_rank}</h4>
+                        <h4 className='mb-3 text-2xl font-bold'>Current Price: ${coins?.market_data.current_price.usd.toLocaleString()}</h4>
+                        <h4 className='mb-3 text-2xl font-bold'>Market Cap: ${coins?.market_data.market_cap.usd.toLocaleString()}</h4>
                     </div>
                 </div>
         
             }
         </div>
-        <CoinGraph />
+        <CoinGraph coins={coins} />
         
     </div>
   )
