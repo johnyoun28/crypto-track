@@ -22,12 +22,13 @@ export type CoinData = {
     market_cap_rank: number
     name: string
     symbol: string
+    id: number
 }
 
 const CoinPage = () => {
 
     const { id } = useParams()
-    const [coins, setCoins] = useState<CoinData | undefined>()
+    const [coins, setCoins] = useState<CoinData | null>(null)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -60,7 +61,11 @@ const CoinPage = () => {
         
             }
         </div>
+        {coins ? (
         <CoinGraph coins={coins} />
+      ) : (
+        null
+      )}
         
     </div>
   )
