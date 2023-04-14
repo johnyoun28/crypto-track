@@ -27,7 +27,7 @@ const CoinGraph = ({ coins }: CoinGraphIdProps ) => {
 
 
   return (
-    <div className='w-[75%] m-5 flex items-center justify-center'>
+    <div className='w-[75%] m-5 flex items-center flex-col justify-center'>
       
       <Line
               data={{
@@ -56,7 +56,12 @@ const CoinGraph = ({ coins }: CoinGraphIdProps ) => {
                 },
               }}
             />
-
+        <div className='flex justify-evenly w-full'>
+            <button className='p-3 rounded bg-yellow-300 text-black w-[23%]'>24 Hours</button>
+            <button className='p-3 rounded bg-yellow-300 text-black w-[23%]'>30 Days</button>
+            <button className='p-3 rounded bg-yellow-300 text-black w-[23%]'>3 Months</button>
+            <button className='p-3 rounded bg-yellow-300 text-black w-[23%]'>1 Year</button>
+        </div>
     </div>
   )
 }
