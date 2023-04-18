@@ -56,11 +56,11 @@ const CoinGraph = ({ coins }: CoinGraphIdProps ) => {
                 },
               }}
             />
-        <div className='flex justify-evenly w-full'>
-            <button className='p-3 rounded bg-yellow-300 text-black w-[23%]'>24 Hours</button>
-            <button className='p-3 rounded bg-yellow-300 text-black w-[23%]'>30 Days</button>
-            <button className='p-3 rounded bg-yellow-300 text-black w-[23%]'>3 Months</button>
-            <button className='p-3 rounded bg-yellow-300 text-black w-[23%]'>1 Year</button>
+            <div className='flex justify-evenly w-full'>
+            <button onClick={() => setDays(1)} className='p-3 rounded bg-yellow-300 text-black w-[23%]'>24 Hours</button>
+            <button onClick={() => setDays(30)} className='p-3 rounded bg-yellow-300 text-black w-[23%]'>30 Days</button>
+            <button onClick={() => setDays(90)} className='p-3 rounded bg-yellow-300 text-black w-[23%]'>3 Months</button>
+            <button onClick={() => setDays(365)} className='p-3 text-center font-bold rounded bg-yellow-300 text-black w-[23%]'>1 Year</button>
         </div>
     </div>
   )
