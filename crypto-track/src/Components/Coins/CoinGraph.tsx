@@ -27,7 +27,7 @@ const CoinGraph = ({ coins }: CoinGraphIdProps ) => {
 
 
   return (
-    <div className='w-[75%] m-5 flex items-center flex-col justify-center'>
+    <div className='w-[75%] m-5 flex items-center flex-col justify-center xl:w-full xl:pr-7'>
       
       <Line
               data={{
