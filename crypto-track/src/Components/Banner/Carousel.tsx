@@ -30,16 +30,23 @@ const Carousel = () => {
       },[])
 
   const items = trending.map(trend => {
+    const change = trend.price_change_percentage_24h >= 0;
     return (
-      <div className='flex flex-col items-center'>
+      <Link to={`/coins/${trend.id}`}>
+        <div className='flex flex-col items-center'>
         <img className='h-[60px]' src={trend.image}/>
-        <span> {trend.symbol} </span>
+        <span > {trend.symbol.toUpperCase()}&nbsp; <span className={`${parseFloat(trend.price_change_percentage_24h.toFixed(2)) > 0 ? "+" && "text-green-500" : "text-red-500" }`}>
+          {change && '+'}
+          {trend.price_change_percentage_24h.toFixed(2)} </span>
+        </span>
+        <span className='text-xl'>${trend.current_price.toLocaleString()}</span>
       </div>
+      </Link>
     )
   })
 
   return (
-    <div className='h-[50%] max-w-[50%] flex items-center mt-8'>
+    <div className='h-[50%] max-w-[40%] flex items-center mt-8'>
         <AliceCarousel
         mouseTracking
         infinite
