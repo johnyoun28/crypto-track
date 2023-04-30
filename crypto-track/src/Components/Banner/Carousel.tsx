@@ -46,7 +46,7 @@ const Carousel = () => {
   })
 
   return (
-    <div className='h-[50%] flex items-center mt-12'>
+    <div className='h-[50%] w-4/5 flex items-center mt-12'>
         <AliceCarousel
         mouseTracking
         infinite
