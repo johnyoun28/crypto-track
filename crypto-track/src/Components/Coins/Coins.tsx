@@ -41,7 +41,7 @@ const Coins = () => {
   
   return (
     <div className="flex flex-col items-center m-5 w-full">
-      <span className="text-4xl font-bold text-center">Cryptocurrency Prices by Market Cap</span>
+      <span className="text-4xl font-bold text-center xs:text-lg sm:text-2xl">Cryptocurrency Prices by Market Cap</span>
       <input
        className="w-[90%] mt-4 text-white bg-[#14161a] outline-white rounded" 
        type="text" 

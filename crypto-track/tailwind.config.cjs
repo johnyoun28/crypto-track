@@ -8,8 +8,9 @@ module.exports = {
       'banner': "url('./public/banner.jpeg')",
     },
     screens:{
-      'sm': {'max': '640px'},
-      'md': {'max': '800px'},
+      'xs': {'max': '450px'},
+      'sm': {'max': '660px'},
+      'md': {'max': '770px'},
       'lg': {'max': '1024px'},
       'xl': {'max': '1280px'},
     }

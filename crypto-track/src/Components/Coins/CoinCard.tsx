@@ -26,16 +26,16 @@ const CoinCard = ({ coin }: CoinCardProps) => {
                     <img className="w-10 h-10 rounded-full" src={coin.image} alt="Jese image"/>
                     <div className="pl-3">
                         <div className="text-base font-semibold text-white">{coin.symbol.toUpperCase()}</div>
-                        <div className="font-normal text-gray-500">{coin.name}</div>
+                        <div className="font-normal text-gray-500 xs:text-sm">{coin.name}</div>
                     </div>  
                 </th>
-                <td className="px-6 py-4 text-white text-right">
+                <td className="px-6 py-4 text-white text-right md:px-0">
                     ${coin.current_price.toLocaleString()}
                 </td>
                 <td className={`${parseFloat(coin.price_change_percentage_24h.toFixed(2)) > 0 ? "text-green-500" : "text-red-500" } px-6 py-4 text-right`} >
                 {coin.price_change_percentage_24h.toFixed(2)}%
                 </td>
-                <td className="px-6 py-4 text-white text-right">
+                <td className="px-6 py-4 text-white text-right table-cell md:hidden">
                     ${coin.market_cap.toLocaleString()}
                 </td>
             </tr>
