@@ -5,7 +5,7 @@ module.exports = {
   "./node_modules/flowbite/**/*.js"],
   theme: {
     backgroundImage: {
-      'banner': "url('./public/banner.jpeg')",
+      'banner': "url('./banner.jpeg')",
     },
     screens:{
       'xs': {'max': '450px'},
