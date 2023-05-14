@@ -15,6 +15,8 @@ type CoinCardProps = {
 }
 
 const CoinCard = ({ coin }: CoinCardProps) => {
+
+    const change = coin.price_change_percentage_24h >= 0
   return (
 
 <div className="relative overflow-x-auto">
@@ -32,7 +34,8 @@ const CoinCard = ({ coin }: CoinCardProps) => {
                 <td className="px-6 py-4 text-white text-right md:px-0">
                     ${coin.current_price.toLocaleString()}
                 </td>
-                <td className={`${parseFloat(coin.price_change_percentage_24h.toFixed(2)) > 0 ? "text-green-500" : "text-red-500" } px-6 py-4 text-right`} >
+                <td className={`${parseFloat(coin.price_change_percentage_24h.toFixed(2)) > 0 ? " text-green-500" : "text-red-500" } px-6 py-4 text-right`} >
+                {change && '+'}
                 {coin.price_change_percentage_24h.toFixed(2)}%
                 </td>
                 <td className="px-6 py-4 text-white text-right table-cell md:hidden">
