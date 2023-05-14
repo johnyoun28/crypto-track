@@ -6,8 +6,8 @@ const Banner = () => {
     <div className='bg-banner'>
       <div className='w-full h-[400px] flex flex-col pt-6'>
       <div className=' flex flex-col justify-around items-center py-6'>
-        <span className='text-6xl mb-5 text-center'>Crypto Tracker</span>
-        <span className='text-sm text-center text-[#5A5A5A]'>Get All The Info Regarding Your Favorite Crypto Currency</span>
+        <span className='text-6xl mb-5 mx-2 text-center'>Crypto Tracker</span>
+        <span className='text-sm text-center text-[#5A5A5A]'>Get All The Info Regarding Your Favorite Cryptocurrency</span>
         <Carousel/>
       </div>
       </div>
